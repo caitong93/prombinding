@@ -56,5 +56,8 @@ func Bind(sample *model.Sample, obj interface{}) error {
 			vv.SetString(lv)
 		}
 	}
+	if len(bErr.Messages) == 0 {
+		return nil
+	}
 	return bErr
 }

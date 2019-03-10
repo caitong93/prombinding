@@ -56,7 +56,7 @@ func TestLabelMissing(t *testing.T) {
 		if cas.err && err == nil {
 			t.Errorf("Expect error, got nil")
 		}
-		if !cas.err && err == nil {
+		if !cas.err && err != nil {
 			t.Errorf("Expect nil, got error")
 		}
 		if !reflect.DeepEqual(cas.result, target) {
